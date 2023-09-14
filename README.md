@@ -2,4 +2,7 @@
 
 This is a script to automatically install prusalink on a radxa zero
 
-Run it with ```raw.githubusercontent.com/neoyarus/PrusaLink-Deploy/main/install.sh```
+Run it with 
+```
+bash -c "$(wget https://raw.githubusercontent.com/neoyarus/PrusaLink-Deploy/main/install.sh -O -)"
+```
