@@ -4,7 +4,7 @@ pip install git+https://github.com/prusa3d/Prusa-Connect-SDK-Printer.git@0.7.0
 pip install git+https://github.com/prusa3d/Prusa-Link.git@0.7.0
 sudo usermod -a -G dialout rock
 
-cat << 'EOF' >/etc/rc.local
+sudo tee /etc/rc.local << 'EOF'
 
 #!/bin/sh -e
 #
@@ -51,10 +51,11 @@ su $username -c "/home/rock/.local/bin/prusalink start -i --serial-port /dev/tty
 
 exit 0
 
-
 EOF
 
-cat << 'EOF' >/lib/systemd/system/rc-local.service
+sudo chmod +x /etc/rc.local
+
+sudo tee /lib/systemd/system/rc-local.service << 'EOF' 
 
 #  SPDX-License-Identifier: LGPL-2.1-or-later
 #
@@ -81,6 +82,8 @@ RemainAfterExit=yes
 GuessMainPID=no
 
 EOF
+
+sudo ln -s /lib/systemd/system/rc-local.service /etc/systemd/system/rc-local.service
 
 sudo systemctl enable rc-local.service
 
