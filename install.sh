@@ -82,7 +82,7 @@ GuessMainPID=no
 
 EOF
 
-sudo systemctl enable my-service.service
+sudo systemctl enable rc-local.service
 
 sudo shutdown -r now
 
