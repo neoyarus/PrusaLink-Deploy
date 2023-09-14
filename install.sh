@@ -38,7 +38,7 @@ message() {
    printf "M117 $2\n" > "$1"
 }
 
-username=$(id -nu 1000)
+username=rock
 user_site=$(su $username -c "python -m site --user-site")
 
 set_up_port "/dev/ttyAML1"
