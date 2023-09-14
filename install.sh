@@ -47,7 +47,7 @@ message "/dev/ttyAML1" "Starting PrusaLink";
 #$user_site/prusa/link/data/config_copy.sh
 rm -f /home/$username/prusalink.pid
 export PYTHONOPTIMIZE=2
-su $username -c "/home/rock/.local/bin/prusalink start -i --serial-port /dev/ttyAML1"
+su $username -c "/home/rock/.local/bin/prusalink start --serial-port /dev/ttyAML1"
 
 exit 0
 
