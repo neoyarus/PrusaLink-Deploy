@@ -5,7 +5,6 @@ pip install git+https://github.com/prusa3d/Prusa-Link.git@0.7.0
 sudo usermod -a -G dialout rock
 
 sudo tee /etc/rc.local << 'EOF'
-
 #!/bin/sh -e
 #
 # rc.local
@@ -50,13 +49,11 @@ export PYTHONOPTIMIZE=2
 su $username -c "/home/rock/.local/bin/prusalink start --serial-port /dev/ttyAML1"
 
 exit 0
-
 EOF
 
 sudo chmod +x /etc/rc.local
 
 sudo tee /lib/systemd/system/rc-local.service << 'EOF' 
-
 #  SPDX-License-Identifier: LGPL-2.1-or-later
 #
 #  This file is part of systemd.
@@ -80,7 +77,6 @@ ExecStart=/etc/rc.local start
 TimeoutSec=0
 RemainAfterExit=yes
 GuessMainPID=no
-
 EOF
 
 sudo ln -s /lib/systemd/system/rc-local.service /etc/systemd/system/rc-local.service
