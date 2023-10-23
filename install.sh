@@ -2,8 +2,8 @@ sudo apt update
 sudo apt upgrade
 sudo apt install wpasupplicant git python3-pip libcap-dev libmagic1 libturbojpeg libatlas-base-dev python3-numpy python3-dev
 pip install git+https://github.com/prusa3d/gcode-metadata.git
-pip install git+https://github.com/prusa3d/Prusa-Connect-SDK-Printer.git@0.7.2
-pip install git+https://github.com/prusa3d/Prusa-Link.git@0.7.2
+pip install git+https://github.com/prusa3d/Prusa-Connect-SDK-Printer.git
+pip install git+https://github.com/prusa3d/Prusa-Link.git
 sudo usermod -a -G dialout rock
 
 sudo tee /etc/rc.local << 'EOF'
